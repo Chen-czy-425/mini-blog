@@ -3,11 +3,13 @@ import workMainImage from '../../images/work-main.png';
 import workMainVectort1 from '../../images/work-main-vectort1.png';
 import workMainVectort2 from '../../images/work-main-vectort2.png';
 import workMainVectort3 from '../../images/work-main-vectort3.png';
-import {ProjectName}  from '../../common/components'
-// import { Link, Outlet } from "react-router-dom";
+import { ProjectName } from '../../common/components'
+import { Link } from "react-router-dom";
+
+// <Link to={`/${item.type}`} ></Link>
 
 type Description = {
-    id?:number
+    id?: number
     productName?: string,
     productDesign?: string,
     url?: string
@@ -42,10 +44,12 @@ const Main = () => {
 
     return (
         <div>
-            <div className='w-[100%] mb-[12px]'>
-                <img src={workMainImage} />
-            </div>
-            <ProjectName txt={description} />
+            <Link to={`/Detail`} >
+                <div className='w-[100%] mb-[12px]'>
+                    <img src={workMainImage} />
+                </div>
+                <ProjectName txt={description} />
+            </Link>
         </div>
     )
 }
@@ -54,17 +58,22 @@ const Main = () => {
 const Content = () => {
     return (
         <div className='w-[1280px] mx-auto mt-[80px] grid grid-cols-[repeat(3,_1fr)]' >
+
             {
                 listDescription.map(item => (
+
                     <div key={item.id}>
-                        <div className='mb-[16px]'>
-                            <img src={item.url} />
-                        </div>
-                        <ProjectName txt={item} />
+                        <Link to={`/Detail`} >
+                            <div className='mb-[16px]'>
+                                <img src={item.url} />
+                            </div>
+                            <ProjectName txt={item} />
+                        </Link>
                     </div>
 
                 ))
             }
+
         </div>
     )
 }
@@ -72,7 +81,7 @@ const Content = () => {
 const Work = () => {
     return (
         <div className="w-[1280px] mx-auto">
-            <h2 className='w-[670px] h-[100px] text-[36px] font-[350]'>
+            <h2 className='w-[670px] h-[100px] text-[36px] font-[350] mb-[40px]' >
                 I’m a digital product designer from the world
             </h2>
             <Main />
