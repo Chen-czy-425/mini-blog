@@ -1,7 +1,6 @@
-import Work  from '../page/Work';
-
-import About from '../page/About';
-import Detail from '../page/Detail';
+import Work  from '../pages/Work';
+import About from '../pages/About';
+import Detail from '../pages/Detail';
 import App from '../App'
 import { createBrowserRouter } from 'react-router-dom';
 
