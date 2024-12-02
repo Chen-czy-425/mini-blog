@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "思源黑体";
+    color: #090A0A;
+  }
+  
+  a {
+    color: #090A0A;
+    text-decoration: none;
+  }
+  
+  .wrapper{
+    width: 80%;
+    margin: 0 auto;
+  }
